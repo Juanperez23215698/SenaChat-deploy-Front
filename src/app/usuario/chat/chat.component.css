@@ -1,0 +1,53 @@
+#allPage {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: josefin sans, sans-serif;
+  background-color: #dfdfdf;
+}
+
+#rowPage {
+  margin: 0;
+}
+
+.contenedorGrupos {
+  margin: 0;
+  padding: 0px;
+  width: 38%;
+  height: 100vh;
+  border-right: 1px solid #000000;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.contenedorChat {
+  padding: 0;
+  width: 62%;
+}
+
+/* Mensajes */
+
+.Chat {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 62%;
+  top: 70px;
+  bottom: 0;
+  background-color: #dfdfdf;
+  overflow: auto;
+}
+
+.mensajes-container {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  position: static;
+  overflow-y: auto;
+  width: 100%;
+}
+
+#ej {
+  font-size: 50px;
+  padding: 25%;
+}

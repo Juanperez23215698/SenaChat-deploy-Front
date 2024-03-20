@@ -1,0 +1,168 @@
+<form [formGroup]="formEditar" (ngSubmit)="editar()">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            @if (cambios) {
+            <button class="btn btn-outline-primary" type="submit" id="btn">Guardar cambios</button>
+            <button class="btn btn-outline-danger" id="btn" (click)="cancelar()">Cancelar</button>
+            }
+            <h5 id="offcanvasRightLabel">Editar Perfil</h5>
+            <button id="cerrarEditar" data-bs-dismiss="offcanvas" aria-label="Close" (click)="cancelar()" type="button">
+                <i class='bx bx-right-arrow-alt'></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="presentacion">
+                <label for="cambiarImg" id="labelCambiarImg" (mouseleave)="activarBoton()"(mouseenter)="activarBoton()"
+                    [style.background-image]="usuario.foto ? 'url('+'../../../assets/img/'+usuario.foto+')' : 
+                    'url(../../../assets/img/perfil3.jpg)'">
+                    @if (hoverImg) { <span id="spanCambiarImg">Cambiar foto <i class='bx bxs-camera'></i></span> }
+                    <input type="file" id="cambiarImg" hidden>
+                </label>
+                <span id="nombreUsuario">
+                    @if (!propsEditar.nombre_usuario) {
+                    {{ formEditar.value.nombre_usuario }}
+                    <button class="botonTitulo" (click)="activarEditar('nombre_usuario')" type="button">
+                        <i class='bx bxs-pencil'></i>
+                    </button>
+                    } @else {
+                    <label for="nombre_usuario"></label>
+                    <input type="text" id="inputTitulo" formControlName="nombre_usuario" appEditar>
+                    <button class="botonTitulo" (click)="generarCambios('nombre_usuario')" type="button">
+                        <i class='bx bx-check'></i>
+                    </button>
+                    }
+                </span>
+            </div>
+            <div id="informacion">
+                <span class="info-container">
+                    <span class="labelEditar"><strong>Ficha: </strong></span>
+                    <p id="sinE">
+                        {{usuario.id_fichas}}
+                    </p>
+                </span>
+
+                <span class="info-container">
+                    <span for="correo" class="labelEditar"><strong>Correo: </strong></span>
+                    @if (!propsEditar.correo) {
+                    {{ formEditar.value.correo }}
+                    <button class="botonTitulo" (click)="activarEditar('correo')" type="button">
+                        <i class='bx bxs-pencil'></i>
+                    </button>
+                    } @else {
+                    <input type="text" class="inputEditar" formControlName="correo" appEditar>
+                    <button class="botonTitulo" (click)="generarCambios('correo')" type="button">
+                        <i class='bx bx-check'></i>
+                    </button>
+                    }
+                </span>
+
+                <span class="info-container">
+                    <span for="nombres" class="labelEditar"><strong>Nombres:</strong></span>
+                    @if (!propsEditar.primer_nom) {
+                    <p [id]="!propsEditar.primer_nom && !propsEditar.segundo_nom ? 'sinE' : 'conE'">
+                        {{formEditar.value.primer_nom}}
+                    </p>
+                    } @else {
+                    <input type="text" class="inputEditar" id="nombres" appEditar formControlName="primer_nom"
+                        placeholder="Primer nombre">
+                    <button class="botonTitulo" (click)="generarCambios('primer_nom')" type="button">
+                        <i class='bx bx-check'></i>
+                    </button>
+                    }
+                    @if (!propsEditar.segundo_nom) {
+                    <p [id]="!propsEditar.primer_nom && !propsEditar.segundo_nom ? 'sinE' : 'conE'">
+                        {{formEditar.value.segundo_nom}}
+                    </p>
+                    } @else {
+                    <input type="text" class="inputEditar" id="nombres" formControlName="segundo_nom"
+                        placeholder="Segundo nombre">
+                    <button class="botonTitulo" (click)="generarCambios('segundo_nom')" type="button">
+                        <i class='bx bx-check'></i>
+                    </button>
+                    }
+                    @if(!propsEditar.primer_nom && !propsEditar.segundo_nom){
+                    <button class="botonTitulo" (click)="activarEditar('primer_nom', 'segundo_nom')" type="button">
+                        <i class='bx bxs-pencil'></i>
+                    </button>
+                    }
+                </span>
+
+                <span class="info-container">
+                    <span for="apellidos" class="labelEditar"><strong>Apellidos:</strong></span>
+                    @if (!propsEditar.primer_apellido) {
+                    <p [id]="!propsEditar.primer_apellido && !propsEditar.segundo_apellido ? 'sinE' : 'conE'">
+                        {{formEditar.value.primer_apellido}}
+                    </p>
+                    } @else {
+                    <input type="text" class="inputEditar" id="apellidos" appEditar formControlName="primer_apellido"
+                        placeholder="Primer apellido">
+                    <button class="botonTitulo" (click)="generarCambios('primer_apellido')" type="button">
+                        <i class='bx bx-check'></i>
+                    </button>
+                    }
+                    @if (!propsEditar.segundo_apellido) {
+                    <p [id]="!propsEditar.primer_apellido && !propsEditar.segundo_apellido ? 'sinE' : 'conE'">
+                        {{formEditar.value.segundo_apellido}}
+                    </p>
+                    } @else {
+                    <input type="text" class="inputEditar" id="apellidos" formControlName="segundo_apellido"
+                        placeholder="Segundo Apellido">
+                    <button class="botonTitulo" (click)="generarCambios('segundo_apellido')" type="button">
+                        <i class='bx bx-check'></i>
+                    </button>
+                    }
+                    @if (!propsEditar.primer_apellido && !propsEditar.segundo_apellido) {
+                    <button class="botonTitulo" (click)="activarEditar('primer_apellido', 'segundo_apellido')"
+                        type="button">
+                        <i class='bx bxs-pencil'></i>
+                    </button>
+                    }
+                </span>
+
+                <span class="info-container">
+                    <span for="numerodoc" class="labelEditar"><strong>Documento: </strong></span>
+                    @if (!propsEditar.numerodoc) {
+                    {{ formEditar.value.numerodoc }}
+                    <button class="botonTitulo" (click)="activarEditar('numerodoc')" type="button">
+                        <i class='bx bxs-pencil'></i>
+                    </button>
+                    } @else {
+                    <input type="text" class="inputEditar" formControlName="numerodoc" appEditar>
+                    <button class="botonTitulo" (click)="generarCambios('numerodoc')" type="button">
+                        <i class='bx bx-check'></i>
+                    </button>
+                    }
+                </span>
+                <span class="info-container">
+                    <span for="descripcion" class="labelEditar up"><strong>Descripcion: </strong></span>
+                    @if (propsEditar.descripcion) {
+                    <textarea class="inputEditar" id="descripcion" formControlName="descripcion" appEditar></textarea>
+                    <button class="botonTitulo" (click)="generarCambios('descripcion')" type="button">
+                        <i class='bx bx-check'></i>
+                    </button>
+                    } @else {
+                    <p id="sinE">
+                        {{formEditar.value.descripcion}}
+                        <button class="botonTitulo" (click)="activarEditar('descripcion')" type="button">
+                            <i class='bx bxs-pencil'></i>
+                        </button>
+                    </p>
+                    }
+                </span>
+            </div>
+            <div class="position-fixed bottom-0 start-0 p-3" style="z-index: 11">
+                <div id="actualizado" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img [src]="'../../../assets/img/' + usuario.foto" class="rounded me-2" id="toastImg">
+                        <strong class="me-auto">{{ fecha() }}</strong>
+                        <small>{{ hora() }}</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Actualizado correctamente!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

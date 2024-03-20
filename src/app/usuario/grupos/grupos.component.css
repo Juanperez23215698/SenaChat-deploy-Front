@@ -1,0 +1,102 @@
+.Botones {
+  margin: 0;
+  width: 100%;
+  display: flex;
+}
+
+#myTab {
+  font-size: 28px;
+  padding: 0;
+  border: none;
+  width: 100%;
+  margin: 2vh 4vh;
+  .nav-link {
+    color: rebeccapurple;
+    span {
+      position: absolute;
+      background-color: red;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+#perfil-tab {
+  background: none;
+  border: none;
+  padding: 0;
+  img {
+    height: 40px;
+    border-radius: 50%;
+  }
+}
+
+#foto-perfil {
+  display: flex;
+  justify-content: end;
+  flex-grow: 1;
+  padding-bottom: 10px;
+}
+
+#myTabContent {
+  padding: 0;
+}
+
+.tab {
+  overflow-y: auto;
+  height: 70vh;
+}
+
+#tituloAviso {
+  margin: 1.5rem;
+}
+
+.aviso {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 15rem;
+  margin: 0 6rem;
+  background: whitesmoke;
+  border-radius: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+  .espacioIcono {
+    display: flex;
+    width: 100%;
+    height: 40%;
+    background-color: #c54848;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: white;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
+  .espacioTexto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    padding: 1rem;
+  }
+  h4 {
+    text-align: center;
+    font-weight: bold;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 0.6rem;
+  }
+  button {
+    width: 60%;
+    border: none;
+    border-radius: 1rem;
+    background-color: #c54848;
+    color: white;
+    align-self: center;
+    font-size: 1rem;
+  }
+}

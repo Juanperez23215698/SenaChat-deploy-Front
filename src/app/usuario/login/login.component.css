@@ -1,0 +1,188 @@
+.login-box {
+  width: 50%;
+  height: 82%;
+  padding: 2%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ebebeb;
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.6);
+  border-radius: 4%;
+  text-align: center;
+  border: 1px solid;
+  font-family: sans-serif;
+}
+
+#c1 {
+  margin-bottom: 3%;
+  padding-top: 1%;
+  img {
+    width: 30%;
+    height: 30%;
+  }
+}
+
+form {
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "tipodoc numerodoc"
+    "password password"
+    "other other";
+  #c2 {
+    grid-area: tipodoc;
+    margin-bottom: 2rem;
+  }
+  #c3 {
+    grid-area: numerodoc;
+    text-align: left;
+  }
+  #c4 {
+    grid-area: password;
+  }
+  #c5 {
+    grid-area: other;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.user-box {
+  position: relative;
+  input {
+    width: 94%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    background: transparent;
+    text-align: left;
+  }
+  select {
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    padding: 12.5px 0;
+  }
+  label {
+    position: absolute;
+    top: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  #tipodoc {
+    left: 6.2%;
+  }
+  #num {
+    left: 0;
+  }
+  #con {
+    left: 3%;
+  }
+}
+
+.withError {
+  input {
+    border-bottom-color: #ff0000;
+  }
+  select {
+    border-bottom-color: #ff0000;
+  }
+  .error {
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: #ff0000;
+  }
+}
+
+#c4 {
+  p {
+    text-align: end;
+    margin: 0;
+    margin-right: 3%;
+  }
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #117311;
+    text-shadow: none;
+  }
+  .errorc4 {
+    color: #ff0000;
+    text-align: center;
+  }
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  left: 3%;
+  color: #000;
+  font-size: 12px;
+}
+
+select:focus {
+  border-color: #237023;
+  box-shadow: 0 0 5px rgba(81, 173, 68, 0.5);
+}
+
+select option {
+  background-color: #70b470;
+}
+
+#c5 {
+  .ingreso {
+    position: relative;
+    width: 94%;
+    font-weight: bold;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #237023;
+    color: #fff;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 2rem;
+    border: none;
+    letter-spacing: 2px;
+    text-align: center;
+    border-radius: 15px;
+  }
+  p {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .crear-cuenta {
+    cursor: pointer;
+    text-shadow: 0 0 9px #000000;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #117311;
+    text-shadow: none;
+  }
+}
+
+.ingreso:hover {
+  opacity: 0.6;
+}
+
+.ingreso:disabled:hover {
+  background: none;
+  color: #000;
+  box-shadow: none;
+  border-color: #000;
+}

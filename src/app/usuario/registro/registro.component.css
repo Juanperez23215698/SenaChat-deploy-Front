@@ -1,0 +1,161 @@
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  background-color: #ebebeb;
+  width: 50rem;
+  height: 90%;
+  padding: 2%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.6);
+  border: 1px solid;
+  border-radius: 3%;
+  font-family: sans-serif;
+  img {
+    width: 9rem;
+  }
+}
+
+form {
+  display: grid;
+  grid-template-areas:
+    "primernom segundonom primerape segundoape"
+    "tipodoc tipodoc documento documento"
+    "correo correo username username"
+    "password password confirm confirm"
+    "boton boton boton boton";
+  margin: 1px;
+  margin-top: 2%;
+  #c1 {
+    grid-area: primernom;
+  }
+  #c2 {
+    grid-area: segundonom;
+  }
+  #c3 {
+    grid-area: primerape;
+  }
+  #c4 {
+    grid-area: segundoape;
+  }
+  #c5 {
+    grid-area: tipodoc;
+  }
+  #c6 {
+    grid-area: documento;
+  }
+  #c7 {
+    grid-area: correo;
+  }
+  #c8 {
+    grid-area: username;
+  }
+  #c9 {
+    grid-area: password;
+  }
+  #c10 {
+    grid-area: confirm;
+  }
+  #c11 {
+    grid-area: boton;
+  }
+}
+
+.user-box {
+  position: relative;
+  input {
+    width: 90%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    background: transparent;
+    text-align: left;
+  }
+  select {
+    text-align: left;
+    width: 90%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    padding: 3.3% 0;
+  }
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    padding-left: 5%;
+    font-size: 16px;
+    color: #000;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+}
+
+#c1,
+#c2,
+#c3,
+#c4 {
+  width: 88%;
+  margin: 0 6.5%;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #000;
+  font-size: 12px;
+}
+
+select:focus {
+  border-color: #237023;
+  box-shadow: 0 0 5px rgba(81, 173, 68, 0.5);
+}
+
+select option {
+  background-color: #70b470;
+}
+
+#c11 {
+  .registro {
+    position: relative;
+    width: 94%;
+    font-weight: bold;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #237023;
+    color: #fff;
+    overflow: hidden;
+    transition: 0.5s;
+    border: none;
+    letter-spacing: 2px;
+    text-align: center;
+    border-radius: 15px;
+  }
+  p {
+    margin: 0;
+    font-size: 16px;
+    margin-top: 1rem;
+  }
+  .inicia-sesion {
+    text-decoration: none;
+    color: #117311;
+    text-shadow: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+  }
+}
+
+.registro:hover {
+  opacity: 0.6;
+}

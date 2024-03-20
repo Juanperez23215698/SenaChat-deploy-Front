@@ -1,0 +1,86 @@
+form {
+  width: 100%;
+}
+
+.contenedor-form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.input-group {
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  .form-control:focus {
+    box-shadow: none;
+  }
+}
+
+#botonEnviar {
+  background-color: #0e882d;
+  border-color: #0e882d;
+}
+
+#contenido_mensaje {
+  height: 42px;
+  margin: 0.5% 1.5vh;
+  border: 1px solid;
+  border-radius: 8px;
+  width: 82%;
+}
+
+#enviar {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  margin: 0 1%;
+}
+
+#iconoEnviar {
+  font-size: 30px;
+  color: black;
+}
+
+#iconoEnviar:hover {
+  color: #0e882d;
+}
+
+#labelArchivo {
+  height: 45px;
+  width: 45px;
+  margin: 2.5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: 1px solid black; */
+  border-radius: 50%;
+}
+
+#iconoArchivo {
+  font-size: 25px;
+  color: black;
+}
+
+#iconoArchivo:hover {
+  color: #0e882d;
+}
+
+.upload-file {
+  display: none;
+}
+
+label {
+  #file {
+    padding: 0;
+  }
+}
