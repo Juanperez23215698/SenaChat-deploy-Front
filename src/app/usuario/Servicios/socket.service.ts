@@ -7,7 +7,7 @@ import { MensajeEmitir } from '../Modelos/mensaje';
   providedIn: 'root'
 })
 export class SocketService {
-  private url = "http://localhost:3000";
+  private url = "mysql://u4u0okcmyjmw5reb:ZhHurKTg3hCg40ckVHSt@b3j38zupvodu63t4w42n-mysql.services.clever-cloud.com:3306/b3j38zupvodu63t4w42n";
   private options = {
     withCredentials: true,
     autoConnect: true
