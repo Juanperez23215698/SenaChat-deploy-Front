@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { io, Socket } from 'socket.io-client';
-import { MensajeEmitir } from '../Modelos/mensaje';
+import { io } from 'socket.io-client';
+import { MensajeEmitir } from '../../Modelos/mensaje';
+import { url } from '../../../servidor';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SocketService {
-  private url = "mysql://u4u0okcmyjmw5reb:ZhHurKTg3hCg40ckVHSt@b3j38zupvodu63t4w42n-mysql.services.clever-cloud.com:3306/b3j38zupvodu63t4w42n";
-  private options = {
-    withCredentials: true,
-    autoConnect: true
-  };
-  private io = io(this.url, this.options);
-  private ioConnected = io(`${this.url}/online`, this.options);
-  private recibido = false;
-
   constructor() {
     // this.io.on('test2', (m) => console.log(m));
     // ESTE ES UN EJEMPLO DE TEST
   }
+  private options = {
+    withCredentials: true,
+    autoConnect: true
+  };
+  private io = io(url, this.options);
+  private ioConnected = io(`${url}/online`, this.options);
+  private recibido = false;
 
   conectarEnGrupo(room: any) {
     this.io.emit('disponible', room);

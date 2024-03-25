@@ -2,20 +2,21 @@ import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { ChatService } from '../Servicios/chat.service';
-import { MensajeEmitir, MensajeMostrar } from '../Modelos/mensaje';
+import { MensajeEmitir, MensajeMostrar } from '../../Modelos/mensaje';
 import { MensajesComponent } from '../mensajes/mensajes.component';
 import { ChatDirective } from '../Directivas/chat.directive';
 import { SesionService } from '../Sesiones/sesion.service';
 import { GruposComponent } from '../grupos/grupos.component';
 import { InfoGruposComponent } from '../info-grupos/info-grupos.component';
 import { MensajesEnviarComponent } from '../mensajes-enviar/mensajes-enviar.component';
-import { ChatComponentData } from '../Modelos/chat';
-import { Grupo } from '../Modelos/grupos';
+import { ChatComponentData } from '../../Modelos/chat';
+import { Grupo } from '../../Modelos/grupos';
 import { SocketService } from '../Servicios/socket.service';
-import { Fecha } from '../Modelos/fechas';
+import { Fecha } from '../../Modelos/fechas';
 import { PerfilEditarComponent } from '../perfil-editar/perfil-editar.component';
 import { MensajesVariosComponent } from '../mensajes-varios/mensajes-varios.component';
 import { CerrarSesionComponent } from '../cerrar-sesion/cerrar-sesion.component';
+import { ChatAnimacionComponent } from '../chat-animacion/chat-animacion.component';
 
 @Component({
   selector: 'app-chat',
@@ -30,7 +31,8 @@ import { CerrarSesionComponent } from '../cerrar-sesion/cerrar-sesion.component'
     MensajesEnviarComponent,
     PerfilEditarComponent,
     MensajesVariosComponent,
-    CerrarSesionComponent
+    CerrarSesionComponent,
+    ChatAnimacionComponent
   ],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.css'
@@ -113,6 +115,7 @@ export class ChatComponent {
     mensaje.primer_nom = primer_nom;
     mensaje.primer_apellido = primer_apellido;
     mensaje.fecha_hora = new Date();
+    
 
     if (!grupo) this.grupoElegido.mensajes.push(mensaje);
     else {

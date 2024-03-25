@@ -1,5 +1,5 @@
 import { Directive, Input, OnChanges, TemplateRef, ViewContainerRef, SimpleChanges } from '@angular/core';
-import { Grupo } from '../Modelos/grupos';
+import { Grupo } from '../../Modelos/grupos';
 
 @Directive({
   selector: '[appChat]',
@@ -24,7 +24,7 @@ export class ChatDirective implements OnChanges {
   static seleccionar = (value: string) => { return value = value == '0' ? '1' : '0' }
 
   static contieneMensajes = (grupo: Grupo, valor: string) => {
-    return grupo?.mensajes?.length ? grupo.mensajes[grupo.mensajes.length - 1][valor] : undefined;
+    if (grupo?.mensajes?.length) return grupo.mensajes[grupo.mensajes.length - 1][valor];
   }
   
 }
