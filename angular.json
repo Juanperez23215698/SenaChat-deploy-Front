@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontend": {
+    "Frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -22,17 +22,16 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/_redirects"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/boxicons/css/boxicons.min.css"
-          ],
-          "scripts": [
+            ],
+            "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-          ]
+            ]
           },
           "configurations": {
             "production": {
@@ -62,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "frontend:build:production"
+              "buildTarget": "Frontend:build:production"
             },
             "development": {
-              "buildTarget": "frontend:build:development"
+              "buildTarget": "Frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "frontend:build"
+            "buildTarget": "Frontend:build"
           }
         },
         "test": {
@@ -96,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "fd88a62c-d63b-401f-8a2a-58fecd5e270a"
   }
 }

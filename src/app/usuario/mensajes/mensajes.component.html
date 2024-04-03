@@ -1,12 +1,10 @@
-<div class="card-body" #componente>
+<div class="card-body" #componente (scroll)="onScroll($event)">
     @for ( m of mensajes; track m.id_mensaje) {
     <div [ngClass]="m.numerodoc == usuario ? 'Propio' : 'Ajeno'">
         <div [ngClass]="m.numerodoc == usuario ? 'mensajesPropios' : 'mensajesAjenos'">
             @if (m.numerodoc != usuario) { <p class="nombreEmisor">~~ {{ m.primer_nom }} </p> }
-            @if (m.id_tipo === 1) { <span> {{ m.contenido_mensaje  }} </span> }
-            @if (m.id_tipo === 2) {
-                <img src="http://localhost:3000/imagenes/1711068755010-IMG-20220327-WA0004.jpg">
-            }
+            @if (m.id_tipo === 1) { <span> {{ m.contenido_mensaje }} </span> }
+            @if (m.id_tipo === 2) {<img [src]="url+m.contenido_mensaje" appImagen class="imagen">}
             <p [ngClass]="m.numerodoc == usuario ? 'horaPropios' : 'horaAjenos'">
                 {{ obtenerHora(m.fecha_hora) }}
             </p>
@@ -19,5 +17,10 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
+    }
+    @if (mostrarBotonScroll) {
+    <button (click)="hacerScroll(1)" class="boton-scroll" [ngClass]="{'mostrar': mostrarBotonScroll}">
+        <i class='bx bxs-chevron-down'></i>
+    </button>
     }
 </div>

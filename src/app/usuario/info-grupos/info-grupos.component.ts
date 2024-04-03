@@ -8,6 +8,8 @@ import { BootstrapService } from '../Servicios/bootstrap.service';
 import { InfoPerfilComponent } from '../info-perfil/info-perfil.component';
 import { InfoAgregarComponent } from '../info-agregar/info-agregar.component';
 import { InfoEliminarComponent } from '../info-eliminar/info-eliminar.component';
+import { urlImagenes } from '../../../servidor';
+import { Rol } from '../../Modelos/roles';
 
 @Component({
   selector: 'app-info-grupos',
@@ -28,6 +30,8 @@ export class InfoGruposComponent {
   @Input() grupoSeleccionado: Grupo = {};
   mostrarDropdown: string | undefined = undefined;
   usuarioConsultado: any;
+  url = urlImagenes;
+  rol = new Rol();
 
   ngAfterViewInit() { this.B.iniciarInstanciasInfo();}
 

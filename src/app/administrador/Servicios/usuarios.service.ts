@@ -16,4 +16,10 @@ export class UsuariosService {
   agregarUsuario(datos: any) {
     return this.http.post(`${url}/admin/agregar-usuario`, datos);
   }
+  traerUsuarioPorId(numdoc: any){
+    return this.http.get(`${url}/admin/usuario/${numdoc}`);
+  }
+  editarUsuario(datos: any, numdoc: any){
+    return this.http.put(`${url}/admin/editar-usuario/${numdoc}`, datos);
+  }
 }
